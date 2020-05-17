@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test" this:Test.in_OrchestratorQueueRelativeEndpoint="/odata/QueueDefinitions(103842)/UiPathODataSvc.Reports?$filter=((QueueDefinitionId%20eq%20103842))" this:Test.in_TemporaryFolder="Test Folder" this:Test.in_ReportFileName="[&quot;000_StandardReport_&quot;+Date.Today.ToString(&quot;dd.MM.yyyy&quot;)]" this:Test.in_ColumnNamesToDelete="[{&quot;Revision&quot;, &quot;Deadline&quot;, &quot;Priority&quot;, &quot;Robot&quot;, &quot;Postpone&quot;, &quot;Key&quot;, &quot;Reviewer Name&quot;}]" this:Test.in_StartDateTime="[Now.AddDays(-5)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" this:Test.in_OrchestratorQueueRelativeEndpoint="/odata/QueueDefinitions(&lt;Queue No&gt;)/UiPathODataSvc.Reports?$filter=((QueueDefinitionId%20eq%20&lt;Queue No&gt;))" this:Test.in_ReportFileName="[&quot;000_StandardReport_&quot;+Date.Today.ToString(&quot;dd.MM.yyyy&quot;)]" this:Test.in_ColumnNamesToDelete="[{&quot;Revision&quot;, &quot;Deadline&quot;, &quot;Priority&quot;, &quot;Robot&quot;, &quot;Postpone&quot;, &quot;Key&quot;, &quot;Reviewer Name&quot;}]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_OrchestratorQueueRelativeEndpoint" Type="InArgument(x:String)">
       <x:Property.Attributes>
@@ -26,7 +26,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>886.4,3422.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>886.4,3448</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -83,7 +83,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Util_CreateStandardReport" sap:VirtualizedContainerService.HintSize="896.8,3217.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Util_CreateStandardReport" sap:VirtualizedContainerService.HintSize="896.8,3243.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="JSONResponse" />
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
@@ -105,43 +105,43 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Orchestrator Request Status Code = &quot; + StatusCode.ToString]" />
       </If.Else>
     </If>
-    <ui:WriteTextFile DisplayName="Write Text File - Write CSV file" FileName="[path.Combine(in_TemporaryFolder, in_ReportFileName + &quot;.csv&quot;)]" sap:VirtualizedContainerService.HintSize="855,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[JSONResponse]" />
-    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DT_Report]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[path.Combine(in_TemporaryFolder, in_ReportFileName + &quot;.csv&quot;)]" sap:VirtualizedContainerService.HintSize="855,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-    <If Condition="[DT_Report.Rows.Count = 0]" DisplayName="If - Queue has no transactions" sap:VirtualizedContainerService.HintSize="855,208" sap2010:WorkflowViewState.IdRef="If_8">
+    <ui:WriteTextFile DisplayName="Write Text File - Write CSV file" FileName="[path.Combine(in_TemporaryFolder, in_ReportFileName + &quot;.csv&quot;)]" sap:VirtualizedContainerService.HintSize="855.2,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[JSONResponse]" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DT_Report]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[path.Combine(in_TemporaryFolder, in_ReportFileName + &quot;.csv&quot;)]" sap:VirtualizedContainerService.HintSize="855.2,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+    <If Condition="[DT_Report.Rows.Count = 0]" DisplayName="If - Queue has no transactions" sap:VirtualizedContainerService.HintSize="855.2,209.6" sap2010:WorkflowViewState.IdRef="If_8">
       <If.Then>
-        <Throw Exception="[New Exception(&quot;The queue for reporting does not contain any transactions&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+        <Throw Exception="[New Exception(&quot;The queue for reporting does not contain any transactions&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
       </If.Then>
     </If>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Delete Unncessary Columns" sap:VirtualizedContainerService.HintSize="855,248" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_ColumnNamesToDelete]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Delete Unncessary Columns" sap:VirtualizedContainerService.HintSize="855.2,249.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_ColumnNamesToDelete]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="ColName" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[ColName]" DataTable="[DT_Report]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+            <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[ColName]" DataTable="[DT_Report]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <InvokeMethod DisplayName="Invoke method - Reorder Exception Reason" sap:VirtualizedContainerService.HintSize="855,132" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetOrdinal">
+    <InvokeMethod DisplayName="Invoke method - Reorder Exception Reason" sap:VirtualizedContainerService.HintSize="855.2,133.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetOrdinal">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd:DataColumn">[DT_Report.Columns("Exception Reason")]</InArgument>
       </InvokeMethod.TargetObject>
       <InArgument x:TypeArguments="x:Int32">3</InArgument>
     </InvokeMethod>
-    <InvokeMethod DisplayName="Invoke method - Reorder Retry No." sap:VirtualizedContainerService.HintSize="855,132" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
+    <InvokeMethod DisplayName="Invoke method - Reorder Retry No." sap:VirtualizedContainerService.HintSize="855.2,133.6" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd:DataColumn">[DT_Report.Columns("Retry No.")]</InArgument>
       </InvokeMethod.TargetObject>
       <InArgument x:TypeArguments="x:Int32">4</InArgument>
     </InvokeMethod>
-    <Assign DisplayName="Assign - Remove rows with blank Start Time" sap:VirtualizedContainerService.HintSize="855,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign DisplayName="Assign - Remove rows with blank Start Time" sap:VirtualizedContainerService.HintSize="855.2,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[DT_Report]</OutArgument>
       </Assign.To>
@@ -149,15 +149,15 @@
         <InArgument x:TypeArguments="sd:DataTable">[DT_Report.Select(" [Started]&lt;&gt; '' ").CopyToDataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence sap2010:Annotation.AnnotationText="Here, a temporary column with the data type DateTime has been added for the Select query filter to work properly. This column is removed after running the query&#xA;&#xA;For more info, refer to: https://forum.uipath.com/t/bug-report-filter-a-datetime-column-in-a-datatable-using-select-query/213062" DisplayName="Sequence - Filter based on DateTime" sap:VirtualizedContainerService.HintSize="855,696" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence sap2010:Annotation.AnnotationText="Here, a temporary column with the data type DateTime has been added for the Select query filter to work properly. This column is removed after running the query&#xA;&#xA;For more info, refer to: https://forum.uipath.com/t/bug-report-filter-a-datetime-column-in-a-datatable-using-select-query/213062" DisplayName="Sequence - Filter based on DateTime" sap:VirtualizedContainerService.HintSize="855.2,709.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:AddDataColumn x:TypeArguments="s:DateTime" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="Started_DateTime" DataTable="[DT_Report]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="100" Unique="False" />
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT_Report]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:AddDataColumn x:TypeArguments="s:DateTime" Column="{x:Null}" DefaultValue="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="Started_DateTime" DataTable="[DT_Report]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="436.8,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="100" Unique="False" />
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT_Report]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
@@ -187,9 +187,9 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Assign DisplayName="Assign - Filter rows after start time" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign DisplayName="Assign - Filter rows after start time" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[DT_Report]</OutArgument>
             </Assign.To>
@@ -199,7 +199,7 @@
           </Assign>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -210,9 +210,9 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
               </ActivityAction.Argument>
-              <If Condition="[exception.Message.Contains(&quot;contains no DataRows&quot;)]" sap:VirtualizedContainerService.HintSize="507,208" sap2010:WorkflowViewState.IdRef="If_9">
+              <If Condition="[exception.Message.Contains(&quot;contains no DataRows&quot;)]" sap:VirtualizedContainerService.HintSize="506.4,209.6" sap2010:WorkflowViewState.IdRef="If_9">
                 <If.Then>
-                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[out_NoReportCreated]</OutArgument>
                     </Assign.To>
@@ -229,7 +229,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Started_DateTime" DataTable="[DT_Report]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Started_DateTime" DataTable="[DT_Report]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="436.8,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
     </Sequence>
     <If Condition="[out_NoReportCreated]" sap:VirtualizedContainerService.HintSize="855,436" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
