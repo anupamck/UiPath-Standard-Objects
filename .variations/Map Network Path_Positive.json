@@ -1,0 +1,1 @@
+[{"Test_Type":"Path with special characters","Folder_Path":"\\\\localhost\\C$\\Standard Objects Test Folder\\äÄöÖüÜß"},{"Test_Type":"Path without credentials","Folder_Path":"\\\\localhost\\C$\\Standard Objects Test Folder"},{"Test_Type":"Path with slash","Folder_Path":"\\\\localhost\\C$\\Standard Objects Test Folder\\"}]

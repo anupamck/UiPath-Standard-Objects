@@ -1,0 +1,130 @@
+{
+  "name": "StandardObjects",
+  "description": "Library for holding standard reusable objects to be used in UiPath workflows",
+  "main": "NewActivity.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "2.9.3",
+    "UiPath.Mail.Activities": "1.9.3",
+    "UiPath.System.Activities": "20.10.1",
+    "UiPath.Testing.Activities": "1.2.4",
+    "UiPath.UIAutomation.Activities": "20.10.5",
+    "UiPath.WebAPI.Activities": "1.6.0"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.10.0.0",
+  "projectVersion": "1.3.2",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "bb075ff6-9d23-421a-8062-a8072a9929b3",
+        "dataVariationFilePath": ".variations\\Clear Folder_TestData_Negative.json",
+        "fileName": "File Management\\Test_Clear Folder\\Clear Folder_Negative.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "535d408b-3dca-49c9-b3e2-4be3a21fd891",
+        "dataVariationFilePath": ".variations\\Clear Folder_TestData_Positive_Subfolder.json",
+        "fileName": "File Management\\Test_Clear Folder\\Clear Folder_Positive_Subfolder.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "53118ac0-bb81-4a46-bdd7-0f2dd5af4f86",
+        "dataVariationFilePath": ".variations\\Clear Folder_TestData_Positive_Folder.json",
+        "fileName": "File Management\\Test_Clear Folder\\ClearFolder_Positive_Folder.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "10ddb12e-4f31-4942-b8e4-5a07521d61ed",
+        "fileName": "Reporting and Queue Management\\Test_Delete New Queue Items\\Delete Queue Items_Multiple Items.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "2a072458-cce9-4d38-98de-56672e0864ed",
+        "dataVariationFilePath": ".variations\\Ensure Folder_TestData_Negative.json",
+        "fileName": "File Management\\Test_Ensure Folder\\Ensure Folder_Negative.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "3889fc2c-3a55-4db1-9f2f-6bae6fa90d69",
+        "dataVariationFilePath": ".variations\\Ensure Folder_TestData_Positive.json",
+        "fileName": "File Management\\Test_Ensure Folder\\Ensure Folder_Positive.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "12e48cd8-72a6-4ee5-9673-d3f456fa84d9",
+        "dataVariationFilePath": "",
+        "fileName": "Print as PDF\\Test_Convert Excel to PDF\\Convert Excel to PDF_Negative_Input file not found.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "078f580f-2566-4c7f-ab8a-6aabaa8861ad",
+        "fileName": "Print as PDF\\Test_Convert Excel to PDF\\Convert Excel to PDF_Negative_PDF file already open.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "671ea08f-4e0d-4947-be9d-8d504794ecee",
+        "dataVariationFilePath": ".variations\\Convert Excel to PDF_Positive.json",
+        "fileName": "Print as PDF\\Test_Convert Excel to PDF\\Convert Excel to PDF_Positive.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "57e2b81d-3d97-496c-8177-3c70d5b42d3a",
+        "fileName": "Reporting and Queue Management\\Test_Delete New Queue Items\\Delete Queue Items_One Queue Item.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "99fd4bc1-5051-4ea3-a7a7-727c3281d3fe",
+        "fileName": "Reporting and Queue Management\\Test_Delete New Queue Items\\Delete Queue Items_No items.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "35f448ae-a0d5-46b0-96ac-350e865f8a87",
+        "dataVariationFilePath": ".variations\\Map Network Path_Positive.json",
+        "fileName": "Network Drive Mapping\\Test_Map Network Path\\Map Network Path_Positive.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "a451017a-ec5a-4e64-9f22-57dfedacb437",
+        "dataVariationFilePath": ".variations\\Map Network Path_Negative.json",
+        "fileName": "Network Drive Mapping\\Test_Map Network Path\\Map Network Path_Negative.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "48f2baca-2e18-4a64-a9d3-74cb87b703ef",
+        "dataVariationFilePath": ".variations\\Convert Excel to PDF_Negative_NullInput.json",
+        "fileName": "Print as PDF\\Test_Convert Excel to PDF\\Convert Excel to PDF_Negative_Null input.xaml"
+      }
+    ],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}
